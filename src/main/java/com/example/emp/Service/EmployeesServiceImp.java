@@ -24,13 +24,13 @@ public class EmployeesServiceImp implements EmployeesService {
     }
 
     @Override
-    public EmployeeEntity detailsId(Long id) {
-        return employeesRepository.getById(id);
+    public Optional<EmployeeEntity>searchId(Long id) {
+        return employeesRepository.findById(id);
 }
 
     @Override
     public Optional<EmployeeEntity> searchName(String name) {
-        return employeesRepository.getByName(name);
+        return employeesRepository.findByName(name);
     }
 
     @Override
@@ -42,5 +42,13 @@ public class EmployeesServiceImp implements EmployeesService {
         return employeesRepository.save(employeeEntity);
     }
 
-
+    @Override
+    public boolean deleteEmp(Long id) {
+ EmployeeEntity employeeEntity=employeesRepository.findById(id).get();
+ if (!employeesRepository.existsById(id)){
+     return false;
+ }
+         employeesRepository.deleteById(id);
+         return true;
+    }
 }

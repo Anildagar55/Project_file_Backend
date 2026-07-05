@@ -10,7 +10,8 @@ import java.util.Optional;
 public interface EmployeesService {
     List<EmployeeEntity>employeesList();
     public boolean createEmployees(EmployeeEntity employee);
-  public EmployeeEntity detailsId(Long id);
+  public Optional<EmployeeEntity> searchId(Long id);
   public Optional<EmployeeEntity> searchName(String name);
   public EmployeeEntity updatedetails(Long id,EmployeeEntity employee);
+  public  boolean deleteEmp(Long id);
 }
