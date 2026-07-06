@@ -31,7 +31,7 @@ public class EmployeeController {
     public Optional<EmployeeEntity> searchName(@PathVariable String name){
         return employeesServiceImp.searchName(name);
     }
-    @PatchMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public EmployeeEntity updatedDetails(@PathVariable Long id,@RequestBody EmployeeEntity employeeEntity){
         return employeesServiceImp.updatedetails(id,employeeEntity);
     }@DeleteMapping("/delete/{id}")
