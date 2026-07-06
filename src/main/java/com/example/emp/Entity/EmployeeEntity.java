@@ -20,7 +20,7 @@ public class EmployeeEntity {
     private String email;
     private double salary;
 
-    @Lob
-    @Column(columnDefinition = "LONGBLOB")
-    private byte[]image;
+//    @Lob
+//    @Column(columnDefinition = "LONGBLOB")
+//    private byte[]image;
 }
